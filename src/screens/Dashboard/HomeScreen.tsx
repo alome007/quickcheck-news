@@ -1,20 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {
-  View,
-  SafeAreaView,
-  StyleSheet,
-  FlatList,
-  Text,
-  Alert,
-} from 'react-native';
+import {View, SafeAreaView, StyleSheet, FlatList, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {HeaderComponent} from './componets/HeaderComponent';
 import {NewsItem} from './componets/NewsItem';
 import {useAppSelector} from '../../redux/store/hooks';
 import {useDispatch} from 'react-redux';
 import {HomeNavigationProp} from '../../navigation/types';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {fetchNewsAction} from '../../redux/actions/newsAction';
 import {ActivityIndicator, Button} from 'react-native-paper';
 
@@ -31,9 +24,10 @@ export const HomeScreen = () => {
     dispatch(fetchNewsAction());
   };
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item}: any) => {
     return (
       <NewsItem
+        key={item[1].time.toString()}
         data={{
           title: item[1].title,
           time: item[1].time,

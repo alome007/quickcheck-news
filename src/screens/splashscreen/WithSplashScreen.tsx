@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Animated, StyleSheet} from 'react-native';
+import {Text} from 'react-native-svg';
 
 export function WithSplashScreen({
   children,
@@ -92,12 +93,12 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
 const style = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: '#E0B9BB',
+    backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
   image: {
-    width: 250,
-    height: 250,
+    width: 100,
+    height: 100,
   },
 });

@@ -46,7 +46,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   NSDictionary *initProps = [self prepareInitialProps];
   UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"quickcheckNews", initProps);
 
- rootView.backgroundColor = [UIColor colorWithRed:0.87843 green:0.72549 blue:0.73333 alpha:1.0];
+ rootView.backgroundColor = [UIColor colorWithRed:1.00000 green:1.00000 blue:1.00000 alpha:1.00000];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];

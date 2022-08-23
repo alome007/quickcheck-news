@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <viewLayoutGuide key="safeArea" id="VQL-mw-5y0"/>
-                        <color key="backgroundColor" red="0.87843" green="0.72549" blue="0.73333" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1.00000" green="1.00000" blue="1.00000" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
