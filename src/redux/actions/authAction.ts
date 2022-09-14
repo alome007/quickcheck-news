@@ -16,7 +16,7 @@ export const loginUserAction =
       });
 
       const db = await getDBConnection();
-      console.log(email, password);
+      // console.log(email, password);
       const user = await getUser(email, password, db);
 
       if (user.length > 0) {

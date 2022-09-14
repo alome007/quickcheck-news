@@ -24,7 +24,7 @@ export const createTable = async (db: SQLiteDatabase) => {
   );`;
     await db.executeSql(query);
   } catch (e) {
-    console.log(e.message);
+    // console.log(e.message);
   }
 };
 

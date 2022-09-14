@@ -13,7 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 import {SignupNavigationProp} from '../../navigation/types';
 import {useEffect, useState} from 'react';
 import {Button} from 'react-native-paper';
-import {getDBConnection, getUser} from '../../db/db-service';
+import {createTable, getDBConnection, getUser} from '../../db/db-service';
 import {getSession, saveSession} from '../../misc/methods';
 
 export const SigninScreen = () => {
@@ -24,6 +24,7 @@ export const SigninScreen = () => {
 
   const handleLogin = async () => {
     const db = await getDBConnection();
+    await createTable(db);
     const user = await getUser(email.toLowerCase(), password, db);
 
     if (user.length > 0) {
@@ -49,7 +50,7 @@ export const SigninScreen = () => {
         }
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
       });
   });
 

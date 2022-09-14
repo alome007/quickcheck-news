@@ -12,7 +12,7 @@ export const WebViewScreen = () => {
   const route = useRoute();
   const {url} = route.params;
   const navigation = useNavigation<WebViewNavigationProp>();
-  console.log(route.params);
+  // console.log(route.params);
 
   const DisplaySpinner = () => {
     return (

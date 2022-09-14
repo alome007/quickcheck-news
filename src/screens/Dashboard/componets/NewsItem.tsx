@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
 
     fontFamily: 'montserrat',
   },
-  sb: {justifyContent: 'space-evenly', flex: 1},
+  sb: {justifyContent: 'space-between', flex: 1},
   italicText: {fontStyle: 'italic', marginRight: 10},
 });

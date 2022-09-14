@@ -24,6 +24,10 @@ export const HomeScreen = () => {
     dispatch(fetchNewsAction());
   };
 
+  const keyExtracting = (item: any, _index: any) => {
+    return item.id;
+  };
+
   const renderItem = ({item}: any) => {
     return (
       <NewsItem
@@ -39,7 +43,7 @@ export const HomeScreen = () => {
     );
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <View style={styles.pt20}>
         <HeaderComponent
           onProfileClick={() =>
@@ -59,7 +63,7 @@ export const HomeScreen = () => {
             </View>
           )}
 
-          <View>
+          <View style={{flex: 1}}>
             {error && (
               <View style={styles.error}>
                 <Text>Error while fetching news...</Text>
@@ -71,11 +75,11 @@ export const HomeScreen = () => {
             {
               <FlatList
                 data={news}
+                keyExtractor={keyExtracting}
                 onRefresh={onRefresh}
                 showsVerticalScrollIndicator={false}
                 refreshing={loading}
                 renderItem={renderItem}
-                keyExtractor={item => item.time}
               />
             }
           </View>
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flex: 1,
   },
-  pt20: {paddingTop: 20},
-  mt20: {marginTop: 20},
+  pt20: {paddingTop: 20, flex: 1},
+  mt20: {marginTop: 20, flex: 1},
   error: {justifyContent: 'center', alignSelf: 'center', marginTop: 30},
 });

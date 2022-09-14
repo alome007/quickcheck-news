@@ -48,3 +48,10 @@ export const getSession = async () => {
     // error reading value
   }
 };
+
+export const paginateNews = (array, page_size, page_number) => {
+  return array.slice(
+    page_number * page_size,
+    page_number * page_size + page_size,
+  );
+};

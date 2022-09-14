@@ -15,7 +15,7 @@ import {useEffect, useState} from 'react';
 import {Button} from 'react-native-paper';
 import {SvgXml} from 'react-native-svg';
 import {backArrow} from '../../misc';
-import {getDBConnection, saveUserData} from '../../db/db-service';
+import {createTable, getDBConnection, saveUserData} from '../../db/db-service';
 import {saveSession} from '../../misc/methods';
 
 export const SignupScreen = () => {
@@ -46,8 +46,9 @@ export const SignupScreen = () => {
     return checker;
   };
   const handleSignup = async () => {
+    const db = await getDBConnection();
+    await createTable(db);
     if (verifyInfo()) {
-      const db = await getDBConnection();
       saveUserData(db, {
         password,
         username,
@@ -62,7 +63,7 @@ export const SignupScreen = () => {
     Alert.alert('Success', 'Registration successful', [
       {
         text: 'close',
-        onPress: () => console.log('Cancel Pressed'),
+        onPress: () => {},
         style: 'cancel',
       },
       {text: 'OK', onPress: () => navigation.navigate('Signin')},

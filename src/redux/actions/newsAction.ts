@@ -1,4 +1,5 @@
 import {Dispatch} from 'redux';
+import { paginateNews } from '../../misc/methods';
 import {getStories, getStory} from '../../network/news';
 import {NewsObject} from '../../screens/Dashboard/componets/types';
 import {
@@ -16,7 +17,10 @@ export const fetchNewsAction =
       });
 
       const [_, stories] = await getStories('new');
-      const res: NewsObject[] = await Promise.all(stories.map(getStory));
+      const res: NewsObject[] = await Promise.all(
+        stories.slice(0, 30).map(getStory),
+
+      );
 
       dispatch({
         type: NEWS_LIST_SUCCESS,
